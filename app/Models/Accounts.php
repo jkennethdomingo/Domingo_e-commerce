@@ -38,4 +38,19 @@ class Accounts extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function login($email, $password)
+    {
+        $user = $this->where('email', $email)->first();
+        if ($user) {
+            // Verify the password
+            if (password_verify($password, $user['password'])) {
+                return $user;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
 }

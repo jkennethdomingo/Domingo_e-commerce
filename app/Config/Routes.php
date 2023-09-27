@@ -5,7 +5,17 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'MainController::index');
-$routes->get('/login', 'MainController::login');
+
+//View Routes
+$routes->get('/', 'ViewController::index');
+$routes->get('/login', 'ViewController::login');
+$routes->get('/admin', 'ViewController::admin', ['filter' => 'authGuard']);
+$routes->get('/shop', 'ViewController::shop', ['filter' => 'authGuard']);
+
+
+//Authentication Routes
+$routes->post('/AuthLogin', 'Authentication::AuthLogin');
+$routes->get('logout', 'Authentication::logout');
+
+//Function Routes
 $routes->post('/save', 'MainController::save');
-$routes->get('/admin', 'MainController::admin');

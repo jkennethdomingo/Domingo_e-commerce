@@ -8,9 +8,9 @@
                         <h1 class="m-0 text-white"><i class="fa fa-user-tie me-2"></i>K-Shop Kingdom</h1>
                     </a>
                     <p class="mt-3 mb-4">Welcome to K-Shop Kingdom, your premier destination for all things Kpop! We are passionate about bringing you the latest merchandise, exclusive content, and unforgettable fan experiences. Dive into the world of Kpop with us and discover a community that shares your love for music, idols, and more.</p>
-                    <form action="">
+                    <form action="<?=base_url('login')?>">
                         <div class="input-group">
-                            <button class="btn btn-dark">Sign Up</button>
+                            <button type="submit" class="btn btn-dark">Log In</button>
                         </div>
                     </form>
                 </div>
@@ -76,7 +76,7 @@
         <div class="row justify-content-end">
             <div class="col-lg-8 col-md-6">
                 <div class="d-flex align-items-center justify-content-center" style="height: 75px;">
-                    <p class="mb-0">&copy; <a class="text-white border-bottom" href="#">Your Site Name</a>. All Rights Reserved. 
+                    <p class="mb-0">&copy; <a class="text-white border-bottom" href="#">K-Shop Kingdom</a>. All Rights Reserved. 
                     
                     <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
                     Designed by <a class="text-white border-bottom" href="https://htmlcodex.com">HTML Codex</a></p>

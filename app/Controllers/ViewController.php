@@ -8,7 +8,7 @@ class ViewController extends BaseController
 {
     public function index()
     {
-        return view('user/home');
+        return view('user/Views/homepage/homepage');
     }
 
     public function login()
@@ -28,6 +28,6 @@ class ViewController extends BaseController
 
     public function shop()
     {
-        return view('user/shop/shop');
+        return view('user/Views/shop/shop');
     }
 }

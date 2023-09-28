@@ -1,9 +1,12 @@
+<?= $this->include('admin/tables/modals/addModal.php') ?>
+
 <div class="content-wrapper"> 
     <div class="container-xxl flex-grow-1 container-p-y">
-        <h4 class="py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Basic Tables</h4>
+        <h4 class="py-3 mb-4"><span class="text-muted fw-light"><a href="#" class="btn btn-primary" id="openAddProductModal">Add Product</a></span></h4>
+        
 <!-- Hoverable Table rows -->
 <div class="card">
-    <h5 class="card-header">Hoverable rows</h5>
+    <h5 class="card-header">Manage Products</h5>
     <div class="table-responsive text-nowrap">
         <table class="table table-hover">
             <thead>

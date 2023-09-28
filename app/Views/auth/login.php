@@ -1,4 +1,9 @@
-<?= $this->include('include/header.php') ?>
+<?php
+
+$this->extend('main');
+$this->section('body');
+
+?>
 <!-- Login Stylesheet -->
 <link rel="stylesheet" href="/assets/login/css/style.css">
 <section>
@@ -50,4 +55,4 @@
         </div>
     </div>
 </section>
-<?= $this->include('include/endtag.php') ?>
+<?php $this->endSection(); ?>

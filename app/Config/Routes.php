@@ -8,8 +8,9 @@ use CodeIgniter\Router\RouteCollection;
 
 //View Routes
 $routes->get('/', 'ViewController::index');
-$routes->get('/login', 'ViewController::login');
-$routes->get('/admin', 'ViewController::admin', ['filter' => 'authGuard']);
+$routes->get('/login', 'ViewController::login', ['filter' => 'loginGuard']);
+$routes->get('/admin', 'ViewController::admin', ['filter' => 'adminGuard']);
+$routes->get('/table', 'ViewController::tables', ['filter' => 'adminGuard']);
 $routes->get('/shop', 'ViewController::shop', ['filter' => 'authGuard']);
 
 

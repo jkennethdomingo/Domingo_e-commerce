@@ -2,30 +2,11 @@
 
 namespace App\Controllers;
 
-use App\Models\Accounts;
 use CodeIgniter\Controller;
-use CodeIgniter\HTTP\RequestInterface;
 
-class Home extends Controller
+class Authentication extends BaseController
 {
-    protected $accounts;
-    protected $session;
-
-    public function __construct()
-    {
-        helper('url');
-    }
-
-    public function initController(\CodeIgniter\HTTP\RequestInterface $request, \CodeIgniter\HTTP\ResponseInterface $response, \Psr\Log\LoggerInterface $logger)
-    {
-        // Do Not Edit This Line
-        parent::initController($request, $response, $logger);
-
-        $this->accounts = new Accounts();
-        $this->session = \Config\Services::session();
-    }
-
-    public function AuthLogin(RequestInterface $request)
+    public function AuthLogin()
     {
         $validation = \Config\Services::validation();
 
@@ -35,13 +16,13 @@ class Home extends Controller
             'password' => 'required|min_length[6]',
         ]);
 
-        if (!$validation->withRequest($request)->run()) {
+        if (!$validation->withRequest($this->request)->run()) {
             // Validation failed, redirect with validation errors
-            return redirect()->to('/login')->withInput()->with('errors', $validation->getErrors());
+            return redirect()->to(base_url('login'))->withInput()->with('errors', $validation->getErrors());
         }
 
-        $email = $request->getPost('email');
-        $password = $request->getPost('password');
+        $email = $this->request->getPost('email');
+        $password = $this->request->getPost('password');
 
         $user = $this->accounts->login($email, $password);
 
@@ -49,15 +30,17 @@ class Home extends Controller
             $sessionData = [
                 'id' => $user['id'],
                 'email' => $user['email'],
+                'role' => $user['role'],
                 'isLoggedIn' => true,
             ];
 
             $this->session->set($sessionData);
 
-            return redirect()->to('/shop');
+            // Use ternary operator for redirection based on role
+            return $user['role'] !== 'admin' ? redirect()->to(base_url('shop')) : redirect()->to(base_url('admin'));
         } else {
             $this->session->setFlashdata('msg', 'Invalid email or password');
-            return redirect()->to('/login');
+            return redirect()->to(base_url('login'));
         }
     }
 
@@ -66,6 +49,6 @@ class Home extends Controller
         // Destroy the user's session
         $this->session->destroy();
 
-        return redirect()->to('/login');
+        return redirect()->to(base_url('login'));
     }
 }

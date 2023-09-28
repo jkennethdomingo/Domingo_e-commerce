@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Controllers;
-
 use CodeIgniter\Controller;
+use App\Models\Accounts;
+use CodeIgniter\Session\Session;
 use CodeIgniter\HTTP\CLIRequest;
 use CodeIgniter\HTTP\IncomingRequest;
 use CodeIgniter\HTTP\RequestInterface;
@@ -46,13 +47,23 @@ abstract class BaseController extends Controller
     /**
      * @return void
      */
+
+    protected $accounts;
+    protected $session;
+
+    public function __construct()
+    {
+        helper('url');
+    }
     public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
     {
         // Do Not Edit This Line
         parent::initController($request, $response, $logger);
 
         // Preload any models, libraries, etc, here.
-
+        $this->accounts = new Accounts();
+        $this->session = \Config\Services::session();
         // E.g.: $this->session = \Config\Services::session();
     }
+
 }

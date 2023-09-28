@@ -3,31 +3,12 @@
 namespace App\Controllers;
 
 use CodeIgniter\Controller;
-use CodeIgniter\Session\Session;
-use App\Models\Accounts;
 
-class ViewController extends Controller
+class ViewController extends BaseController
 {
-    protected $accounts;
-    protected $session;
-
-    public function __construct()
-    {
-        helper('url');
-    }
-
-    public function initController(\CodeIgniter\HTTP\RequestInterface $request, \CodeIgniter\HTTP\ResponseInterface $response, \Psr\Log\LoggerInterface $logger)
-    {
-        // Do Not Edit This Line
-        parent::initController($request, $response, $logger);
-
-        $this->accounts = new Accounts();
-        $this->session = \Config\Services::session();
-    }
-
     public function index()
     {
-        return view('main');
+        return view('user/home');
     }
 
     public function login()
@@ -37,11 +18,16 @@ class ViewController extends Controller
 
     public function admin()
     {
-        return view('admin/admin');
+        return view('admin/dashboard/dashboard-main');
+    }
+
+    public function tables()
+    {
+        return view('admin/tables/table');
     }
 
     public function shop()
     {
-        return view('user/body/shop/shop');
+        return view('user/shop/shop');
     }
 }

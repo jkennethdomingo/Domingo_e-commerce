@@ -1,5 +1,5 @@
-<?= $this->include('include/header.php') ?>
+<?= $this->include('include/shop/header.php') ?>
 
-<?= $this->include('user/body/index.php') ?>
+<?= $this->renderSection('body') ?>
 
-<?= $this->include('include/endtag.php') ?>
+<?= $this->include('include/shop/endtag.php') ?>

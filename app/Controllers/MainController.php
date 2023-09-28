@@ -2,30 +2,10 @@
 
 namespace App\Controllers;
 
-use CodeIgniter\Controller;
-use App\Models\Accounts;
-use CodeIgniter\Session\Session;
 use Exception;
 
-class MainController extends Controller
+class MainController extends BaseController
 {
-    protected $accounts;
-    protected $session;
-
-    public function __construct()
-    {
-        helper('url');
-    }
-
-    public function initController(\CodeIgniter\HTTP\RequestInterface $request, \CodeIgniter\HTTP\ResponseInterface $response, \Psr\Log\LoggerInterface $logger)
-    {
-        // Do Not Edit This Line
-        parent::initController($request, $response, $logger);
-
-        $this->accounts = new Accounts();
-        $this->session = \Config\Services::session();
-    }
-
     public function save()
     {
         $validationRules = [

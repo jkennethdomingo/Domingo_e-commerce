@@ -3,6 +3,8 @@
 namespace App\Controllers;
 use CodeIgniter\Controller;
 use App\Models\Accounts;
+use App\Models\Category;
+use App\Models\Products;
 use CodeIgniter\Session\Session;
 use CodeIgniter\HTTP\CLIRequest;
 use CodeIgniter\HTTP\IncomingRequest;
@@ -62,6 +64,8 @@ abstract class BaseController extends Controller
 
         // Preload any models, libraries, etc, here.
         $this->accounts = new Accounts();
+        $this->category = new Category();
+        $this->products = new Products();
         $this->session = \Config\Services::session();
         // E.g.: $this->session = \Config\Services::session();
     }

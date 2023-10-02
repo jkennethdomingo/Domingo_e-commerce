@@ -2,5 +2,5 @@
 
 <?php $this->section('content'); ?>
     <!-- Content specific to the table view -->
-    <?= $this->include('admin/tables/tblcontent.php') ?>
+    <?= $this->include('admin/Views/tables/tblcontent.php') ?>
 <?php $this->endSection(); ?>

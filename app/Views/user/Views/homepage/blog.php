@@ -9,7 +9,7 @@
             <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
                 <div class="blog-item bg-light rounded overflow-hidden">
                     <div class="blog-img position-relative overflow-hidden">
-                        <img class="img-fluid" src="assets/st-template/img/blog-1.jpg" alt="">
+                        <img class="img-fluid" src="/assets/st-template/img/blog-1.jpg" alt="">
                         <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4" href="">Web Design</a>
                     </div>
                     <div class="p-4">
@@ -26,7 +26,7 @@
             <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
                 <div class="blog-item bg-light rounded overflow-hidden">
                     <div class="blog-img position-relative overflow-hidden">
-                        <img class="img-fluid" src="assets/st-template/img/blog-2.jpg" alt="">
+                        <img class="img-fluid" src="/assets/st-template/img/blog-2.jpg" alt="">
                         <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4" href="">Web Design</a>
                     </div>
                     <div class="p-4">
@@ -43,7 +43,7 @@
             <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
                 <div class="blog-item bg-light rounded overflow-hidden">
                     <div class="blog-img position-relative overflow-hidden">
-                        <img class="img-fluid" src="assets/st-template/img/blog-3.jpg" alt="">
+                        <img class="img-fluid" src="/assets/st-template/img/blog-3.jpg" alt="">
                         <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4" href="">Web Design</a>
                     </div>
                     <div class="p-4">

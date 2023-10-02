@@ -29,6 +29,7 @@ class Authentication extends BaseController
         if ($user) {
             $sessionData = [
                 'id' => $user['id'],
+                'username' => $user['username'],
                 'email' => $user['email'],
                 'role' => $user['role'],
                 'isLoggedIn' => true,
@@ -37,7 +38,7 @@ class Authentication extends BaseController
             $this->session->set($sessionData);
 
             // Use ternary operator for redirection based on role
-            return $user['role'] !== 'admin' ? redirect()->to(base_url('shop')) : redirect()->to(base_url('admin'));
+            return $user['role'] !== 'admin' ? redirect()->to(base_url('shop')) : redirect()->to(base_url('table'));
         } else {
             $this->session->setFlashdata('msg', 'Invalid email or password');
             return redirect()->to(base_url('login'));

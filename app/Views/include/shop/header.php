@@ -13,7 +13,7 @@
 
     <!-- st-template -->
     <!-- Favicon -->
-    <link href="/assets/st-template/img/spf.ico" rel="icon">
+    <link href="/assets/icons/kshop-small.svg" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,6 +34,7 @@
 
     <!-- Template Stylesheet -->
     <link href="/assets/st-template/css/style.css" rel="stylesheet">
+    <link href="/assets/st-template/css/logo.css" rel="stylesheet">
 
 </head>
 

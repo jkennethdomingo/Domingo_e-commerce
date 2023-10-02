@@ -3,13 +3,13 @@
 <div class="layout-wrapper layout-content-navbar">
     <div class="layout-container">
         <!-- Menu -->
-        <?= $this->include('admin/dashboard/menu.php') ?>
+        <?= $this->include('admin/Components/menu.php') ?>
         <!-- / Menu -->
 
         <!-- Layout container -->
         <div class="layout-page">
             <!-- Navbar -->
-            <?= $this->include('admin/dashboard/navbar.php') ?>
+            <?= $this->include('admin/Components/navbar.php') ?>
             <!-- / Navbar -->
 
             <!-- Render the content section defined in extending templates -->
@@ -19,7 +19,7 @@
     <!-- / Content -->
 
     <!-- Footer -->
-    <?= $this->include('admin/dashboard/footer.php') ?>
+    <?= $this->include('admin/Components/footer.php') ?>
     <!-- / Footer -->
 
     <div class="content-backdrop fade"></div>

@@ -1,0 +1,12 @@
+.custom-image {
+    max-width: 92px;
+    max-height: 92px;
+}
+
+/* Styles for screens with a width of 500px or less */
+@media screen and (max-width: 500px) {
+    .custom-image {
+        width: 46px;
+        height: 60px;
+    }
+}

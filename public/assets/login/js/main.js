@@ -16,3 +16,17 @@ function toggleForms() {
         registerToggle.style.display = "block";
     }
 }
+
+// Function to show the larger "View Product" modal
+function showLargeProductModal(productId) {
+    const modalId = `#product${productId}Modal`;
+    $(modalId).modal('show');
+}
+
+// Attach a click event listener to the "View Product" buttons
+$('.view-product').on('click', function () {
+    const productId = $(this).data('product-id');
+    showLargeProductModal(productId);
+});
+
+

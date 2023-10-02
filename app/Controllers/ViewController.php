@@ -19,23 +19,33 @@ class ViewController extends BaseController
 
     public function tables()
     {
-        $data['products'] = $products = $this->products->findAll();
-        $data['categories'] = $categories = $this->category->findAll();
+        $perPage = 5; // Set the number of records per page
+
+        $data['products'] = $this->products->paginate($perPage, 'bootstrap');
+        $data['pager'] = $this->products->pager;
+        $data['categories'] = $this->category->findAll();
+
         return view('admin/Views/tables/table', $data);
     }
 
     public function shop()
     {
-        $data['currentPath'] = '/shop';
+        $data = [
+            'currentPath' => '/shop',
+            'products' => $this->products->findAll(),
+            'categories' => $this->category->findAll(),
+        ];
         return view('user/Views/shop/shop', $data);
     }
 
     public function edit($id = null) {
+        $perPage = 5;
         $data = [
             'modalTitle' => $id ? 'Edit Product' : 'Add Product',
             'submitButtonLabel' => $id ? 'Save Changes' : 'Save Product',
             'categories' => $this->category->findAll(),
-            'products' => $this->products->findAll(),
+            'products' => $this->products->paginate($perPage, 'bootstrap'),
+            'pager' => $this->products->pager,
         ];
     
         // If editing, fetch product data and pass it to the view

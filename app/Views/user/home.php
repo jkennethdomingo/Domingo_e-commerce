@@ -17,7 +17,7 @@ $this->section('body');
 <!-- Navbar & Carousel End -->
 
 <!-- Full Screen Search Start -->
-    <?= $this->include('user/Components/fullscreensearch.php') ?>
+    <?= $this->include('user/Views/homepage/facts.php') ?>
 <!-- Full Screen Search End -->
 
 <?= $this->renderSection('page') ?>

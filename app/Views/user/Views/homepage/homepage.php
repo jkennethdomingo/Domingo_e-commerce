@@ -4,9 +4,6 @@ $this->extend('user/home');
 $this->section('page');
 
 ?>
-<!-- Facts Start -->
-<?= $this->include('user/Views/homepage/facts.php') ?>
-<!-- Facts End -->
 
 <!-- About Start -->
     <?= $this->include('user/Views/homepage/about.php') ?>

@@ -18,11 +18,12 @@
                     </div>
                     <div class="mb-3">
                         <label for="productImage" class="form-label">Product Image</label>
-                        <input type="file" class="form-control" id="productImage" name="productImage">
+                        <input type="file" class="form-control" id="productImage" name="productImage" onchange="previewImage()">
                         <?php if (isset($product) && !empty($product['image'])): ?>
-                            <p>Current Image: <img src="<?= base_url('uploads/' . $product['image']); ?>" alt="Product Image" width="100"></p>
+                            <p>Current Image: <img src="<?= base_url('uploads/' . $product['image']); ?>" alt="Product Image" id="currentImagePreview" width="100"></p>
                             <input type="hidden" name="currentImage" value="<?= $product['image'] ?>">
                         <?php endif; ?>
+                        <div id="newImagePreview"></div>
                     </div>
                     <div class="mb-3">
                         <label for="productPrice" class="form-label">Product Price</label>
@@ -52,3 +53,25 @@
         </div>
     </div>
 </div>
+
+<script>
+    function previewImage() {
+        const input = document.getElementById('productImage');
+        const newImagePreview = document.getElementById('newImagePreview');
+        newImagePreview.innerHTML = '';
+
+        if (input.files && input.files[0]) {
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                const img = document.createElement('img');
+                img.src = e.target.result;
+                img.alt = 'Product Image Preview';
+                img.width = 100;
+                newImagePreview.appendChild(img);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>

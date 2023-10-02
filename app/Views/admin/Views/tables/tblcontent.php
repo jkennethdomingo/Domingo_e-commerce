@@ -52,4 +52,6 @@
     </div>
 </div>
 
+<?= $pager->links('bootstrap', 'bootstrap_pagination') ?>
+
 <!--/ Hoverable Table rows -->

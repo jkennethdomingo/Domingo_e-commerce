@@ -15,7 +15,7 @@
                 <a href="<?= base_url('') ?>" class="nav-item nav-link <?= ($currentPath === '/') ? 'active' : '' ?>">Home</a>
                 <a href="<?= base_url('shop') ?>" class="nav-item nav-link <?= ($currentPath === '/shop') ? 'active' : '' ?>">Shop</a>
             </div>
-            <butaton type="button" class="btn text-primary ms-3" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></butaton>
+            <button type="button" class="btn text-primary ms-3" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></button>
             <li class="nav-item navbar-dropdown dropdown-user dropdown">
                 <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                     <span class="btn btn-primary py-2 px-4 ms-3">
@@ -64,7 +64,7 @@
     <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="w-100" src="/assets/st-template/img/carousel-1.jpg" alt="Image">
+                <img class="w-100" src="/assets/carousel/lesserafim.jpg" alt="Image">
                 <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                     <div class="p-3" style="max-width: 900px;">
                         <h5 class="text-white text-uppercase mb-3 animated slideInDown">Discover Exclusive Kpop Merchandise</h5>
@@ -75,7 +75,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="w-100" src="/assets/st-template/img/carousel-2.jpg" alt="Image">
+                <img class="w-100" src="/assets/carousel/ive.jpg" alt="Image">
                 <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                     <div class="p-3" style="max-width: 900px;">
                         <h5 class="text-white text-uppercase mb-3 animated slideInDown">Meet Your Kpop Idols</h5>

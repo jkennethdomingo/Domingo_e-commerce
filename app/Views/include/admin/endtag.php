@@ -36,6 +36,14 @@
             });
         });
         
+        $(document).ready(function() {
+        const buttonText = $('#openAddProductModal').text().trim();
+        
+        if (buttonText !== 'Add Product') {
+            $('#addProductModal').modal('show');
+            console.log(buttonText);
+        }
+    });
     </script>
     </body>
 

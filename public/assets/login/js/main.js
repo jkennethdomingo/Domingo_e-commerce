@@ -30,3 +30,4 @@ $('.view-product').on('click', function () {
 });
 
 
+

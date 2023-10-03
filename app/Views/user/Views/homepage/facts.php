@@ -19,8 +19,8 @@
                         <i class="fa fa-check text-white"></i>
                     </div>
                     <div class="ps-4">
-                        <h5 class="text-primary mb-0">Projects Done</h5>
-                        <h1 class="mb-0" data-toggle="counter-up">12345</h1>
+                        <h5 class="text-primary mb-0">Products Sold</h5>
+                        <h1 class="mb-0" data-toggle="counter-up">32649</h1>
                     </div>
                 </div>
             </div>
@@ -30,8 +30,8 @@
                         <i class="fa fa-award text-primary"></i>
                     </div>
                     <div class="ps-4">
-                        <h5 class="text-white mb-0">Win Awards</h5>
-                        <h1 class="text-white mb-0" data-toggle="counter-up">12345</h1>
+                        <h5 class="text-white mb-0">Subscriptions</h5>
+                        <h1 class="text-white mb-0" data-toggle="counter-up">1234</h1>
                     </div>
                 </div>
             </div>

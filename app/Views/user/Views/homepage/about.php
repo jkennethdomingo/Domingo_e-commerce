@@ -27,11 +27,11 @@
                         <h4 class="text-primary mb-0">0945 982 0347</h4>
                     </div>
                 </div>
-                <a href="quote.html" class="btn btn-primary py-3 px-5 mt-3 wow zoomIn" data-wow-delay="0.9s">Shop Now!</a>
+                <a href="<?=base_url('shop')?>" class="btn btn-primary py-3 px-5 mt-3 wow zoomIn" data-wow-delay="0.9s">Shop Now!</a>
             </div>
             <div class="col-lg-5" style="min-height: 500px;">
                 <div class="position-relative h-100">
-                    <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s" src="/assets/st-template/img/about.jpg" style="object-fit: cover;">
+                    <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s" src="/assets/icons/Kpop_Offline.webp" style="object-fit: cover;">
                 </div>
             </div>
         </div>

@@ -30,4 +30,22 @@ $('.view-product').on('click', function () {
 });
 
 
+document.addEventListener("DOMContentLoaded", function() {
+    const categoryFilter = document.getElementById("categoryFilter");
+    const productItems = document.querySelectorAll(".team-item");
+    categoryFilter.addEventListener("change", function() {
+    const selectedCategory = categoryFilter.value;
+
+    productItems.forEach(function(productItem) {
+        const productId = productItem.querySelector(".view-product").getAttribute("data-product-id");
+        const productCategory = document.getElementById("serverData" + productId).value;
+
+        if (selectedCategory === "all" || selectedCategory === productCategory) {
+        productItem.style.display = "block";
+        } else {
+        productItem.style.display = "none";
+        }
+    });
+    });
+});
 

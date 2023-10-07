@@ -30,6 +30,7 @@ $this->section('page');
             <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
                 <div class="team-item bg-light rounded overflow-hidden">
                     <div class="team-img position-relative overflow-hidden">
+                        <input type="hidden" id="serverData<?= $product['id']; ?>" value="<?= $product['category']; ?>">
                         <img class="img-fluid w-100 same-size-img" src="/uploads/<?= $product['image']; ?>" alt="">
                         <div class="team-social">
                             <a class="btn btn-primary view-product" data-toggle="modal" data-target="#product<?= $product['id']; ?>Modal" data-product-id="<?= $product['id']; ?>"><i class="fa fa-eye" aria-hidden="true"></i></a>

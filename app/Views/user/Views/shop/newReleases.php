@@ -12,7 +12,7 @@
             <?php foreach ($newReleases as $product): ?>
             <div class="testimonial-item bg-light my-4">
                 <div class="d-flex align-items-center border-bottom pt-4 pb-3 px-4">
-                    <img class="img-fluid rounded" src="/uploads/<?= $product['image']; ?>" style="width: 80px; height: 80px;">
+                    <img class="img-fluid rounded" src="/uploads/<?= $product['image']; ?>" style="width: 75px; height: 75px; object-fit:cover;">
                     <div class="ps-4">
                     <h4 class="text-primary mb-1<?= strlen($product['name']) > 23 ? ' reduce-font-size' : ''; ?>">
                         <?= $product['name']; ?>

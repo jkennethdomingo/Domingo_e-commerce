@@ -9,7 +9,6 @@ $this->section('page');
             <h5 class="fw-bold text-primary text-uppercase">Welcome <?= $_SESSION['username']?>!</h5>
             <h1 class="mb-0">Shop Now!</h1>
         </div>
-    <!-- Search Bar and Category Sorting -->
     <div class="row mb-3">
         <div class="col-md-12">
             <select class="form-control" id="categoryFilter">
@@ -21,18 +20,17 @@ $this->section('page');
         </div>
     </div>
 
-    <!-- Product Cards -->
     <div class="row">
         <?php $counter = 0; ?>
         <?php foreach ($products as $product): ?>
             <?php if ($counter % 3 == 0): ?>
-                </div><!-- Close the previous row if it's not the first product -->
+                </div>
                 <div class="row">
             <?php endif; ?>
             <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
                 <div class="team-item bg-light rounded overflow-hidden">
                     <div class="team-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="/uploads/<?= $product['image']; ?>" alt="">
+                        <img class="img-fluid w-100 same-size-img" src="/uploads/<?= $product['image']; ?>" alt="">
                         <div class="team-social">
                             <a class="btn btn-primary view-product" data-toggle="modal" data-target="#product<?= $product['id']; ?>Modal" data-product-id="<?= $product['id']; ?>"><i class="fa fa-eye" aria-hidden="true"></i></a>
                         </div>
@@ -44,7 +42,6 @@ $this->section('page');
                 </div>
             </div>
 
-            <!-- Product Modal (Move this inside the loop) -->
             <div class="modal fade" id="product<?= $product['id']; ?>Modal" tabindex="-1" role="dialog" aria-labelledby="product<?= $product['id']; ?>ModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
@@ -65,12 +62,11 @@ $this->section('page');
                                     <p>Price: &#8369;<?= $product['price']; ?></p>
                                     <p>Quantity: <?= $product['quantity']; ?></p>
                                     <p>Category: <?= $product['category']; ?></p>
-                                    <!-- Add more details here -->
                                 </div>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>
@@ -79,5 +75,7 @@ $this->section('page');
         <?php endforeach; ?>
     </div>
 </main>
+
+<?= $this->include('/user/Views/shop/newReleases') ?>
 
 <?php $this->endSection(); ?>

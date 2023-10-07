@@ -25,6 +25,9 @@ $this->section('body');
                 <div class="register">
                     <p id="loginToggle">Don't have an account? <a href="#" onclick="toggleForms()">Register</a></p>
                 </div>
+                <div class="register home">
+                    <a class="home" href="<?=base_url('')?>"><i class="fa-solid fa-xmark"></i></a>
+                </div>
             </form>
         </div>
     </div>

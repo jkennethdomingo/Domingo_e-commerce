@@ -19,7 +19,16 @@ $this->section('page');
             </select>
         </div>
     </div>
+    
+    <div class="align-items-center justify-content-center p-4" id="noProductsAlert" style="display: none;">
+        <h3 class="mb-0">Sorry, there are no products available for the selected category right now.</h3>        
+    </div>
 
+    <?php if (empty($products)): ?>
+        <div class="alert alert-info" id="productStatus">
+            <p>No products available at the moment.</p>
+        </div>
+    <?php else: ?>
     <div class="row">
         <?php $counter = 0; ?>
         <?php foreach ($products as $product): ?>
@@ -27,7 +36,7 @@ $this->section('page');
                 </div>
                 <div class="row">
             <?php endif; ?>
-            <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
+            <div class="main-cont col-lg-4 wow slideInUp" data-wow-delay="0.3s">
                 <div class="team-item bg-light rounded overflow-hidden">
                     <div class="team-img position-relative overflow-hidden">
                         <input type="hidden" id="serverData<?= $product['id']; ?>" value="<?= $product['category']; ?>">
@@ -74,6 +83,7 @@ $this->section('page');
             </div>
             <?php $counter++; ?>
         <?php endforeach; ?>
+        <?php endif; ?>
     </div>
 </main>
 

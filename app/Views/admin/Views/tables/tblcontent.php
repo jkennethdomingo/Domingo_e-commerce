@@ -26,7 +26,7 @@
                         <i class="fab fa-angular fa-lg text-danger me-3"></i>
                         <span class="fw-medium"><?= $product['name']; ?></span>
                     </td>
-                    <td><?= strlen($product['description']) > 50 ? substr($product['description'], 0, 50) . '...' : $product['description'] ?></td>
+                    <td><?= strlen($product['description']) > 50 ? substr($product['description'], 0, 35) . '...' : $product['description'] ?></td>
                     <td><?= $product['quantity']; ?></td>
                     <td><?= $product['price']; ?></td>
                     <td>

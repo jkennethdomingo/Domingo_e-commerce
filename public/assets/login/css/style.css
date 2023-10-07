@@ -107,3 +107,17 @@ button:hover {
     color: var(--betterwhite);
     box-shadow: inset 0 0 0 50px transparent;
 }
+
+.home{
+    text-decoration: none;
+    color: var(--white);
+    position: absolute; 
+    top: 0; 
+    right: 0; 
+    padding-right: 2rem;
+    z-index: 9999;
+}
+
+.home:hover{
+    color: #2bb1e0;
+}

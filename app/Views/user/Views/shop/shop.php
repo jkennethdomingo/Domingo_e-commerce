@@ -4,12 +4,14 @@ $this->section('page');
 ?>
 
 <main class="container mt-4 py-5">
+    
+<div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
+            <h5 class="fw-bold text-primary text-uppercase">Welcome <?= $_SESSION['username']?>!</h5>
+            <h1 class="mb-0">Shop Now!</h1>
+        </div>
     <!-- Search Bar and Category Sorting -->
     <div class="row mb-3">
-        <div class="col-md-4">
-            <input type="text" class="form-control" placeholder="Search products">
-        </div>
-        <div class="col-md-4">
+        <div class="col-md-12">
             <select class="form-control" id="categoryFilter">
                 <option value="all">All Categories</option>
                 <?php foreach ($categories as $category): ?>
@@ -21,14 +23,23 @@ $this->section('page');
 
     <!-- Product Cards -->
     <div class="row">
+        <?php $counter = 0; ?>
         <?php foreach ($products as $product): ?>
-            <div class="col-md-3 mb-3">
-                <div class="card">
-                    <img src="/uploads/<?= $product['image']; ?>" class="card-img-top" alt="<?= $product['name']; ?>">
-                    <div class="card-body text-center">
-                        <h5 class="card-title"><?= $product['name']; ?></h5>
-                        <p class="card-text">&#8369;<?= $product['price']; ?></p>
-                        <button class="btn btn-primary view-product" data-toggle="modal" data-product-id="<?= $product['id']; ?>">View Product</button>
+            <?php if ($counter % 3 == 0): ?>
+                </div><!-- Close the previous row if it's not the first product -->
+                <div class="row">
+            <?php endif; ?>
+            <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
+                <div class="team-item bg-light rounded overflow-hidden">
+                    <div class="team-img position-relative overflow-hidden">
+                        <img class="img-fluid w-100" src="/uploads/<?= $product['image']; ?>" alt="">
+                        <div class="team-social">
+                            <a class="btn btn-primary view-product" data-toggle="modal" data-target="#product<?= $product['id']; ?>Modal" data-product-id="<?= $product['id']; ?>"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center py-4">
+                        <h4 class="text-primary"><?= $product['name']; ?></h4>
+                        <p class="text-uppercase m-0">&#8369;<?= $product['price']; ?></p>
                     </div>
                 </div>
             </div>
@@ -64,6 +75,7 @@ $this->section('page');
                     </div>
                 </div>
             </div>
+            <?php $counter++; ?>
         <?php endforeach; ?>
     </div>
 </main>

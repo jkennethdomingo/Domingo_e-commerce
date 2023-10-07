@@ -19,32 +19,6 @@
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 
-    <script>
-        $(document).ready(function() {
-            // Display the modal when the "Add Product" button is clicked
-            $("#openAddProductModal").click(function() {
-                $("#addProductModal").modal("show");
-            });
-
-            // You can also add code here to handle form submission and other functionality
-            // For example, if you want to handle the form submission when the "Save Product" button is clicked:
-            $("#addProductModal").on("click", ".btn-primary", function() {
-                // Handle the form submission logic here
-                // You can access form fields using their IDs like $("#productName").val() and $("#productDescription").val()
-                // For this example, let's just close the modal
-                $("#addProductModal").modal("hide");
-            });
-        });
-        
-        $(document).ready(function() {
-        const buttonText = $('#openAddProductModal').text().trim();
-        
-        if (buttonText !== 'Add Product') {
-            $('#addProductModal').modal('show');
-            console.log(buttonText);
-        }
-    });
-    </script>
     </body>
 
     </html>
